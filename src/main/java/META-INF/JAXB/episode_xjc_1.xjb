@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2020.09.10 à 03:46:42 PM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://UpdateIndividualData">
+    <schemaBindings map="false">
+      <package name="com.pifss.pifsssoapapp.pojoscustomer"/>
+    </schemaBindings>
+    <bindings scd="tns:getCustomerInfoRequest">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.GetCustomerInfoRequest"/>
+    </bindings>
+    <bindings scd="~tns:messageHeaderObj">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.MessageHeaderObj"/>
+    </bindings>
+    <bindings scd="tns:getCustomerInfoResponse">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.GetCustomerInfoResponse"/>
+    </bindings>
+    <bindings scd="~tns:messageStatusObj">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.MessageStatusObj"/>
+    </bindings>
+    <bindings scd="tns:updateCustomerProfileRequest">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.UpdateCustomerProfileRequest"/>
+    </bindings>
+    <bindings scd="tns:updateCustomerProfileResponse">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.UpdateCustomerProfileResponse"/>
+    </bindings>
+    <bindings scd="~tns:returnStatusObj">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.ReturnStatusObj"/>
+    </bindings>
+    <bindings scd="~tns:returnStatusProviderObj">
+      <class ref="com.pifss.pifsssoapapp.pojoscustomer.ReturnStatusProviderObj"/>
+    </bindings>
+  </bindings>
+</bindings>
+

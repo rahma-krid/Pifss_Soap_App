@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2020.09.10 à 03:44:35 PM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://ProvisionPension">
+    <schemaBindings map="false">
+      <package name="com.pifss.pifsssoapapp.pojospension"/>
+    </schemaBindings>
+    <bindings scd="tns:getCustomerSalaryInformationRequest">
+      <class ref="com.pifss.pifsssoapapp.pojospension.GetCustomerSalaryInformationRequest"/>
+    </bindings>
+    <bindings scd="~tns:messageHeaderObj">
+      <class ref="com.pifss.pifsssoapapp.pojospension.MessageHeaderObj"/>
+    </bindings>
+    <bindings scd="tns:getCustomerSalaryInformationResponse">
+      <class ref="com.pifss.pifsssoapapp.pojospension.GetCustomerSalaryInformationResponse"/>
+    </bindings>
+    <bindings scd="~tns:messageStatusObj">
+      <class ref="com.pifss.pifsssoapapp.pojospension.MessageStatusObj"/>
+    </bindings>
+    <bindings scd="tns:performAdvancedSalaryDemandRequest">
+      <class ref="com.pifss.pifsssoapapp.pojospension.PerformAdvancedSalaryDemandRequest"/>
+    </bindings>
+    <bindings scd="tns:performAdvancedSalaryDemandResponse">
+      <class ref="com.pifss.pifsssoapapp.pojospension.PerformAdvancedSalaryDemandResponse"/>
+    </bindings>
+    <bindings scd="tns:getAdvancedSalaryDemandList">
+      <class ref="com.pifss.pifsssoapapp.pojospension.GetAdvancedSalaryDemandList"/>
+    </bindings>
+    <bindings scd="tns:getAdvancedSalaryDemandListResponse">
+      <class ref="com.pifss.pifsssoapapp.pojospension.GetAdvancedSalaryDemandListResponse"/>
+    </bindings>
+    <bindings scd="~tns:advancedPension">
+      <class ref="com.pifss.pifsssoapapp.pojospension.AdvancedPension"/>
+    </bindings>
+    <bindings scd="tns:getAdvancedSalaryDemandDetails">
+      <class ref="com.pifss.pifsssoapapp.pojospension.GetAdvancedSalaryDemandDetails"/>
+    </bindings>
+    <bindings scd="tns:getAdvancedSalaryDemandDetailsResponse">
+      <class ref="com.pifss.pifsssoapapp.pojospension.GetAdvancedSalaryDemandDetailsResponse"/>
+    </bindings>
+    <bindings scd="~tns:demandStatusObj">
+      <class ref="com.pifss.pifsssoapapp.pojospension.DemandStatusObj"/>
+    </bindings>
+    <bindings scd="~tns:returnStatusObj">
+      <class ref="com.pifss.pifsssoapapp.pojospension.ReturnStatusObj"/>
+    </bindings>
+    <bindings scd="~tns:returnStatusProviderObj">
+      <class ref="com.pifss.pifsssoapapp.pojospension.ReturnStatusProviderObj"/>
+    </bindings>
+    <bindings scd="~tns:advancedPensionObj">
+      <class ref="com.pifss.pifsssoapapp.pojospension.AdvancedPensionObj"/>
+    </bindings>
+  </bindings>
+</bindings>
+

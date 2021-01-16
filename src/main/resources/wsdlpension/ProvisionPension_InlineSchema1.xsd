@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ProvisionPension"  xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://ProvisionPension" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+
+
+	<xsd:element ibmSchExtn:docRoot="true" name="getCustomerSalaryInformationRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="customerIdentity" nillable="true" type="xsd:integer"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element ibmSchExtn:docRoot="true" name="getCustomerSalaryInformationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader"
+					type="tns:messageHeaderObj" />
+				<xsd:element name="customerIdentity" nillable="true"
+					type="xsd:integer" />
+				<xsd:element name="totalPension" nillable="true"
+					type="xsd:double" />
+				<xsd:element name="pensionAuthority" nillable="true"
+					type="xsd:string" />
+				<xsd:element name="deductionsAmount" nillable="true"
+					type="xsd:double" />
+				<xsd:element name="netPension" nillable="true"
+					type="xsd:double" />
+				<xsd:element name="IbanNumber" nillable="true"
+					type="xsd:string" />
+				<xsd:element name="Month1" type="xsd:string"></xsd:element>
+				<xsd:element name="Month2" type="xsd:string"></xsd:element>
+				<xsd:element name="messageStatus" nillable="true"
+					type="tns:messageStatusObj" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element ibmSchExtn:docRoot="true" name="performAdvancedSalaryDemandRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="customerIdentityNumber" nillable="true" type="xsd:string"/>
+				<xsd:element name="totalPension" nillable="true" type="xsd:double"/>
+				<xsd:element name="pensionAuthority" nillable="true" type="xsd:string"/>
+				<xsd:element name="deductionsAmount" nillable="true" type="xsd:double"/>
+				<xsd:element name="netPension" nillable="true" type="xsd:double"/>
+				<xsd:element name="IbanNumber" nillable="true" type="xsd:string"/>
+				<xsd:element name="numberOfMonthTobeSpent" nillable="true" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element ibmSchExtn:docRoot="true" name="performAdvancedSalaryDemandResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="result" nillable="true" type="xsd:boolean"/>
+				<xsd:element name="messageStatus" nillable="true" type="tns:messageStatusObj"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="messageStatusObj">
+		<xsd:sequence>
+			<xsd:element name="returnStatus" nillable="true" type="tns:returnStatusObj"/>
+			<xsd:element name="returnStatusProvider" nillable="true" type="tns:returnStatusProviderObj"/>
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="returnStatusObj">
+		<xsd:sequence>
+			<xsd:element maxOccurs="6" name="returnCode" type="xsd:string"/>
+			<xsd:element maxOccurs="128" name="returnCodeDescAr" type="xsd:string"/>
+			<xsd:element maxOccurs="128" name="returnCodeDescEn" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="returnStatusProviderObj">
+		<xsd:sequence>
+			<xsd:element maxOccurs="5" name="returnCodeProvider" type="xsd:string"/>
+			<xsd:element maxOccurs="23" name="returnCodeDescProviderAr" type="xsd:string"/>
+			<xsd:element maxOccurs="23" name="returnCodeDescProviderEn" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element ibmSchExtn:docRoot="true" name="getAdvancedSalaryDemandList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="customerName" nillable="true" type="xsd:string"/>
+				<xsd:element name="customerIdentity" nillable="true" type="xsd:integer"/>
+				<xsd:element name="demandNumber" nillable="true" type="xsd:integer"/>
+				<xsd:element name="pageNumber" nillable="true" type="xsd:integer"/>
+				<xsd:element name="pageSize" nillable="true" type="xsd:integer"/>
+				<xsd:element name="sortBy" nillable="true" type="xsd:string"/>
+
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element ibmSchExtn:docRoot="true" name="getAdvancedSalaryDemandListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="count" nillable="true" type="xsd:integer"/>
+				<xsd:element name="pageNumber" nillable="true" type="xsd:integer"/>
+				<xsd:element name="pageSize" nillable="true" type="xsd:integer"/>
+				<xsd:element name="advancedPensionList" nillable="false" type="tns:advancedPension"/>
+				<xsd:element name="messageStatus" nillable="true" type="tns:messageStatusObj"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="advancedPension">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="advancedPensionListObj" type="tns:advancedPensionObj"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="advancedPensionObj">
+		<xsd:sequence>
+			<xsd:element name="demandId" nillable="true" type="xsd:integer"/>
+			<xsd:element name="demandDate" nillable="true" type="xsd:date"/>
+			<xsd:element name="demandNumber" nillable="true" type="xsd:integer"/>
+			<xsd:element name="customerIdentity" nillable="true" type="xsd:string"/>
+			<xsd:element name="customerName" nillable="true" type="xsd:integer"/>
+			<xsd:element name="demandStatus">
+				<xsd:simpleType>
+
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Under Process"/>
+						<xsd:enumeration value="Validated"/>
+						<xsd:enumeration value="Rejected"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="customerPhone" nillable="true" type="xsd:integer"/>
+
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element ibmSchExtn:docRoot="true" name="getAdvancedSalaryDemandDetails">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="id" nillable="true" type="xsd:integer"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element ibmSchExtn:docRoot="true" name="getAdvancedSalaryDemandDetailsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="messageHeader" type="tns:messageHeaderObj"/>
+				<xsd:element name="demandId" nillable="true" type="xsd:string"/>
+				<xsd:element name="demandDate" nillable="true" type="xsd:date"/>
+				<xsd:element name="demandNumber" nillable="true" type="xsd:integer"/>
+				<xsd:element name="customerIdentity" nillable="true" type="xsd:integer"/>
+				<xsd:element name="customerName" nillable="true" type="xsd:string"/>
+				<xsd:element name="country" nillable="true" type="xsd:string"/>
+				<xsd:element name="pensionAmount" nillable="true" type="xsd:string"/>
+				<xsd:element name="requestedMonths" nillable="true" type="xsd:string"/>
+				<xsd:element name="requestedPensionAmount" nillable="true" type="xsd:string"/>
+				<xsd:element name="demandStatus" nillable="false" type="tns:demandStatusObj"/>
+				<xsd:element name="messageStatus" nillable="true" type="tns:messageStatusObj"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="messageHeaderObj">
+		<xsd:sequence>
+			<xsd:element maxOccurs="27" name="RequestId" type="xsd:string"/>
+			<xsd:element maxOccurs="3" name="RequestChannel">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="MOB"/>
+						<xsd:enumeration value="WEB"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="17" name="RequestTime" type="xsd:string"/>
+
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="demandStatusObj">
+		<xsd:sequence>
+			<xsd:element name="demandStatus">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Under Process"/>
+						<xsd:enumeration value="Validated"/>
+						<xsd:enumeration value="Rejected"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
